@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import './join.css'
 
 const Join = () => {
 
@@ -16,12 +15,17 @@ const Join = () => {
         setRoom(e.target.value)
     };
 
-    const handleClick = ({ name, room }) => {
-        if (!name || !room) {
-            e.preventDefault();
-        } else {
-            return null;
-        }
+    const onClickChatJoin = (e) => {
+        try {
+            if (!name || !room) {
+                e.preventDefault();
+                throw new Error('Both name and room are required!')
+            } else {
+                return null;
+            }
+        } catch (err) {
+            console.log(err.message);
+        };
     };
 
 
@@ -46,7 +50,8 @@ const Join = () => {
                     />
                 </div>
                 <Link
-                    onClick={handleClick}
+                    // onClick={e => (!name || !room) ? e.preventDefault() : null}
+                    onClick={onClickChatJoin}
 
                     to={`/chat?name=${name}&room=${room}`}>
                     <button
