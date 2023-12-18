@@ -19,10 +19,16 @@ const Join = () => {
         try {
             if (!name || !room) {
                 e.preventDefault();
-                throw new Error('Both name and room are required!')
-            } else {
-                return null;
-            }
+                throw new Error('Both name and room are required!');
+            };
+
+            if (name.length < 3) {
+                e.preventDefault();
+                throw new Error('Name must be at least 3 characters long!');
+            };
+
+            return null;
+
         } catch (err) {
             console.log(err.message);
         };
