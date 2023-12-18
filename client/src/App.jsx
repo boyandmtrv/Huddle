@@ -1,10 +1,14 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Join from './components/join/Join';
+import Chat from './components/chat/Chat';
 
 function App() {
     return (
         <Router>
-            <Route path='/' exact component={Join}></Route>
-            <Route path='/chat' component={Chat}></Route>
+            <Routes>
+                <Route path='/' element={<Join />}></Route>
+                <Route path='/chat' element={<Chat />}></Route>
+            </Routes>
         </Router>
     )
 }
