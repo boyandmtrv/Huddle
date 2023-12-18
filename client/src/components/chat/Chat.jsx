@@ -13,6 +13,8 @@ const Chat = () => {
 
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
+    const [message, setMessage] = useState([]);
+    const [messages, setMessages] = useState([]);
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
@@ -26,7 +28,7 @@ const Chat = () => {
 
         });
 
-        return () =>{
+        return () => {
             socket.emit('disconnect');
 
             socket.off();
@@ -34,9 +36,47 @@ const Chat = () => {
 
     }, [ENDPOINT, location.search]);
 
+    useEffect(() => {
+        socket.on('message', (message) => {
+            setMessages([...messages, message]);
+        });
+    }, [messages]);
+
+    const onMessageSend = (e) => {
+        setMessage(e.target.value)
+    };
+
+    const onLetterTyped = (e) => {
+        if (e.key === 'Enter') {
+            sendMessage(e);
+        } else {
+            return null;
+        };
+    };
+
+    const sendMessage = (e) => {
+        e.preventDefault();
+
+        if (message) {
+            socket.emit('sendMessage', message, () => setMessage(''));
+        };
+    };
+
+    console.log(message, messages);
+
     return (
-        <h1>Chat</h1>
-    )
+        <div className="outer">
+            <div className="container">
+                <h1>Chat</h1>
+                <input
+                    type="text"
+                    value={message}
+                    onChange={onMessageSend}
+                    onKeyPress={onLetterTyped}
+                />
+            </div>
+        </div>
+    );
 };
 
 export default Chat;
