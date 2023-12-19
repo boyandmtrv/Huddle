@@ -5,6 +5,10 @@ import { ENDPOINT } from "../../utils/const";
 import queryString from 'query-string';
 import io from 'socket.io-client';
 
+import InfoBar from "../infoBar/infoBar";
+import Input from "../input/Input";
+import Messages from "../messages/Messages";
+
 let socket;
 
 const Chat = () => {
@@ -26,6 +30,7 @@ const Chat = () => {
 
         socket.emit('join', { name, room }, () => {
 
+
         });
 
         return () => {
@@ -42,17 +47,6 @@ const Chat = () => {
         });
     }, [messages]);
 
-    const onMessageSend = (e) => {
-        setMessage(e.target.value)
-    };
-
-    const onLetterTyped = (e) => {
-        if (e.key === 'Enter') {
-            sendMessage(e);
-        } else {
-            return null;
-        };
-    };
 
     const sendMessage = (e) => {
         e.preventDefault();
@@ -68,11 +62,12 @@ const Chat = () => {
         <div className="outer">
             <div className="container">
                 <h1>Chat</h1>
-                <input
-                    type="text"
-                    value={message}
-                    onChange={onMessageSend}
-                    onKeyPress={onLetterTyped}
+                <InfoBar room={room} />
+                <Messages messages={messages} />
+                <Input
+                    message={message}
+                    setMessage={setMessage}
+                    sendMessage={sendMessage}
                 />
             </div>
         </div>
