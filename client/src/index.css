@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Prompt:wght@300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'font';
+    src: url('../public/fonts/LibreBarcode39Text-Regular.ttf');
+}
+
+* {
+    font-family: 'Prompt', sans-serif;
+}
+
+.heading {
+    font-family: 'font';
+}
