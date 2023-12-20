@@ -1,3 +1,5 @@
+import './infoBar.css'
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -9,8 +11,8 @@ const InfoBar = ({
 }) => {
 
     return (
-        <div className="infoBar">
-            <div className="leftContainer">
+        <div className="infoBar flex items-center justify-between bg-blue-500 h-16 w-full">
+            <div className="flex items-center flex-1 ml-5 text-white">
                 <img
                     className="onlineIcon"
                     src={onlineIcon}
@@ -18,7 +20,7 @@ const InfoBar = ({
                 />
                 <h3>{room}</h3>
             </div>
-            <div className="rightContainer">
+            <div className="flex items-center justify-end flex-1 mr-5">
                 <a href="/">
                     <img
                         src={closeIcon}
