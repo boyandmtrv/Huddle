@@ -5,6 +5,7 @@ import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { IoInformation } from "react-icons/io5";
 
 
+
 const Join = () => {
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
