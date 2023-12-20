@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
+import './input.css'
 
 const Input = ({
     message,
@@ -22,10 +20,10 @@ const Input = ({
 
 
     return (
-        <form className="form">
+        <form className="form flex items-center justify-between bg-blue-500 rounded-t-md h-16 w-full">
             <input
                 type="text"
-                className="input"
+                className="input border-none rounded-none p-5 w-full font-lg focus:outline-none"
                 placeholder="Type a message"
                 value={message}
                 onChange={onMessageSend}
@@ -33,7 +31,7 @@ const Input = ({
             />
 
             <button
-                className="sendButton"
+                className="sendButton text-white uppercase bg-blue-500 py-5 px-20 inline-block border-none w-8"
                 onClick={(e) => sendMessage(e)}
             >
                 Send
