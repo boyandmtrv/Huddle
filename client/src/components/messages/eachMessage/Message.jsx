@@ -14,21 +14,21 @@ const Message = ({ message: { user, text }, name }) => {
     return (
         isSendByCurrentUser
             ? (
-                <div className='flex justify-end px-5 mt-8'>
-                    <p className='sendText text-white w-96'>
+                <div className='messageContainer justifyEnd'>
+                    <p className='sendText pr-10'>
                         {trimmedName}
                     </p>
-                    <div className="bg-red-800 rounded-r-3xl rounded-l-3xl p-5 max-w-80">
-                        <p className='w-full text-white text-1.1em'>{ReactEmoji.emojify(text)}</p>
+                    <div className="messageBox backgroundBlue">
+                        <p className='messageText colorWhite'>{ReactEmoji.emojify(text)}</p>
                     </div>
                 </div>
             )
             : (
-                <div className='flex justify-end px-5 mt-8'>
-                    <div className="bg-red-800 rounded-r-3xl rounded-l-3xl p-5 max-w-80 ">
-                        <p className='w-full text-white text-1.1em'>{ReactEmoji.emojify(text)}</p>
+                <div className='messageContainer justifyStart'>
+                    <div className="messageBox backgroundReceived">
+                        <p className='messageText colorReceivedText'>{ReactEmoji.emojify(text)}</p>
                     </div>
-                    <p className='sendText'>
+                    <p className='sendText pl-10'>
                         {user}
                     </p>
                 </div>

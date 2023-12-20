@@ -1,0 +1,45 @@
+/* eachMessage.css */
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Center content vertically */
+  align-items: center;
+  /* Center content horizontally */
+  margin-bottom: 10px;
+}
+
+.messageBox {
+  display: flex;
+  /* Added flex display for the message box */
+  flex-direction: column;
+  /* Align children in a column */
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.sendText {
+  display: flex;
+  font-size: 14px;
+  margin-left: 1%;
+  background-color: red;
+}
+
+/* Styles for messages received (from other users) */
+.justifyStart {
+  align-self: center;
+  /* Center content horizontally */
+}
+
+.backgroundReceived {
+  background-color: #f0f0f0;
+  /* Set your desired background color for received messages */
+}
+
+.colorReceivedText {
+  color: #333;
+  /* Set your desired text color for received messages */
+}

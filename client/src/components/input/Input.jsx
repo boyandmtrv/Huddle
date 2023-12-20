@@ -20,10 +20,10 @@ const Input = ({
 
 
     return (
-        <form className="form flex items-center justify-between bg-blue-500 rounded-t-md h-16 w-full">
+        <form className="form">
             <input
                 type="text"
-                className="input border-none rounded-none p-5 w-full font-lg focus:outline-none"
+                className="input"
                 placeholder="Type a message"
                 value={message}
                 onChange={onMessageSend}
@@ -31,7 +31,7 @@ const Input = ({
             />
 
             <button
-                className="sendButton text-white uppercase bg-blue-500 py-5 px-20 inline-block border-none w-8"
+                className="sendButton"
                 onClick={(e) => sendMessage(e)}
             >
                 Send

@@ -1,5 +1,3 @@
-// import './chat.css'
-
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { ENDPOINT } from "../../utils/const";
@@ -10,6 +8,8 @@ import io from 'socket.io-client';
 import InfoBar from "../infoBar/infoBar";
 import Input from "../input/Input";
 import Messages from "../messages/Messages";
+
+import './chat.css'
 
 let socket;
 
@@ -61,8 +61,8 @@ const Chat = () => {
     console.log(message, messages);
 
     return (
-        <div className="outer flex justify-center items-center w-full h-screen bg-zinc-950">
-            <div className="flex flex-col justify-between bg-red-300  h-screen w-[50%] border-2 border-gray-400">
+        <div className="outer">
+            <div className="container">
                 <InfoBar room={room} />
                 <Messages messages={messages} />
                 <Input
