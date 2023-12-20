@@ -1,3 +1,5 @@
+// import './chat.css'
+
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { ENDPOINT } from "../../utils/const";
@@ -59,9 +61,8 @@ const Chat = () => {
     console.log(message, messages);
 
     return (
-        <div className="outer">
-            <div className="container">
-                <h1>Chat</h1>
+        <div className="outer flex justify-center items-center w-full h-screen bg-zinc-950">
+            <div className="flex flex-col justify-between bg-red-300  h-screen w-[50%] border-2 border-gray-400">
                 <InfoBar room={room} />
                 <Messages messages={messages} />
                 <Input
