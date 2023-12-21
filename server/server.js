@@ -1,10 +1,12 @@
 const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
+const cors = require('cors');
+
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users.js')
 
-const router = require('./router');
+const router = require('./router.js');
 
 const PORT = 5000;
 const app = express();
@@ -66,3 +68,4 @@ io.on('connect', (socket) => {
 app.use(router);
 
 server.listen(PORT, () => console.log('Server is listening on port ' + PORT));
+
