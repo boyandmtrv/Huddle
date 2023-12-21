@@ -14,6 +14,15 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+const corsOptions = {
+    origin: "https://huddle-back.onrender.com/",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
+
 io.on('connect', (socket) => {
 
     socket.on('join', ({ name, room }, callback) => {
