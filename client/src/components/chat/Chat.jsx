@@ -9,7 +9,8 @@ import InfoBar from "../infoBar/infoBar";
 import Input from "../input/Input";
 import Messages from "../messages/Messages";
 
-import './chat.css'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 let socket;
 
@@ -31,7 +32,7 @@ const Chat = () => {
         setRoom(room);
 
         socket.emit('join', { name, room }, () => {
-
+            toast.success('Welcome')
 
         });
 
@@ -58,11 +59,17 @@ const Chat = () => {
         };
     };
 
+
     console.log(message, messages);
 
-    return (
-        <div className="outer">
-            <div className="container">
+      return (
+        <div className="flex flex-col h-screen bg-zinc-950">
+            <div className="container mx-auto h-full flex flex-col bg-zinc-900 border-2 border-[#f0c19557] backdrop-blur-lg">
+                <div className="absolute left-[-260px] top-1/2 transform -translate-y-1/2 p-4 ">
+                    <p style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: '1px' }} className="text-white text-[200px] ">huddle</p>
+                </div>
+
+                {/* Rest of your components */}
                 <InfoBar room={room} />
                 <Messages messages={messages} />
                 <Input
@@ -71,8 +78,19 @@ const Chat = () => {
                     sendMessage={sendMessage}
                 />
             </div>
+            <ToastContainer position="top-right"
+                autoClose={2000}
+                hideProgressBar={true}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                pauseOnHover
+                theme="dark"
+            />
         </div>
     );
+
 };
 
 export default Chat;
