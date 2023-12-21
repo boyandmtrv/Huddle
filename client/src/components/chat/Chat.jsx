@@ -21,7 +21,7 @@ const Chat = () => {
     const [room, setRoom] = useState('');
     const [message, setMessage] = useState([]);
     const [messages, setMessages] = useState([]);
-    const ENDPOINT = 'localhost:5000';
+    const ENDPOINT = 'https://huddle-back.onrender.com/';
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
