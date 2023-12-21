@@ -81,7 +81,6 @@ const Join = () => {
                 <Link
                     onClick={onClickChatJoin}
                     to={`/chat?name=${name}&room=${room}`}
-                    target="_blank" rel="noopener noreferrer"
                 >
                     <button className="button mt-4 text-white text-xl bg-zinc-900 w-24 h-[40px] rounded-3xl border border-white hover:bg-[#f0c195f6] hover:text-black hover:border-black transition ease-in-out" type="submit">
                         Join
@@ -110,7 +109,6 @@ const Join = () => {
                 <Link
                     onClick={onClickChatJoin}
                     to={`/chat?name=${name}&room=${room}`}
-                    target="_blank" rel="noopener noreferrer"
                 >
                     <button className="button mt-4 text-white text-xl bg-zinc-900 w-24 h-[40px] rounded-3xl border border-white hover:bg-white hover:text-black hover:border-black transition ease-in-out" type="submit">
                         Create
