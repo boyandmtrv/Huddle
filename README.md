@@ -21,14 +21,10 @@
       <a href="#about-the-project">About The Project</a>
         <li><a href="#built-with">Built With</a></li>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
         <li><a href="#installation">Installation</a></li>
-      </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -61,7 +57,7 @@ Why Huddle?
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy, follow these steps:
   
 ### Installation
 
@@ -69,14 +65,14 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    git clone https://github.com/boyandmtrv/Huddle.git
    ```
-2. Install NPM packages on the clients folder
+2. Install NPM packages in the client's folder
    ```sh
    cd .\client\
    ```
    ```sh
    npm install
    ```
-3. Install NPM packages on the clients folder
+3. Install NPM packages in the server's folder
    ```sh
    cd .\server\
    ```
@@ -87,8 +83,6 @@ To get a local copy up and running follow these simple example steps.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 ### Run the server
 1. Open a new terminal and enter the server folder
