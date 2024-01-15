@@ -1,7 +1,7 @@
 <div id="readme-top"></div>
 
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/boyandmtrv/Huddle">
     <img src="client/public/img/huddleBg.png" alt="Logo" width="80" height="80">
   </a>
 
